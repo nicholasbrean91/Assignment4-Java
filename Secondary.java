@@ -1,9 +1,45 @@
-
 public class Secondary {
 	
-	public static double perimeterCalc(double side1, double side2, double side3){
+	private double _angelA;
+	private double _angelB;
+	private double _angelC;
+	private double _side1;
+	private double _side2;
+	private double _side3;
+	private double _info1;
+	
+	public Secondary (String type,
+					  double info1,
+					  double info2,
+					  double info3) {
+		if (type.equalsIgnoreCase("SSS")){
+			this._side1 = info1;
+			this._side2 = info2;
+			this._side3 = info3;
+		}else if (type.equalsIgnoreCase("SAS")){
+			this._side1 = info1;
+			this._angelA = info2;
+			this._side3 = info3;
+		}else if (type.equalsIgnoreCase("ASA")){
+			this._angelA = info1;
+			this._side1 = info2;
+			this._angelB = info3;
+		}else if (type.equalsIgnoreCase("SSA")){
+			this._side1 = info1;
+			this._side2 = info2;
+			this._angelA = info3;
+		}else if (type.equalsIgnoreCase("AAS")){
+			this._angelA = info1;
+			this._angelB= info2;
+			this._side1 = info3;
+		}
+		
+	}
+	
+	
+	public static double perimeterCalc(){
 		double perimeter;
-		perimeter = side1 + side2 + side3;
+		perimeter = _side1 + _side2 + _side3;
 		return perimeter;
 	}
 	
@@ -49,5 +85,12 @@ public class Secondary {
     	return (double) Math.sqrt(semi*(semi - side1)*(semi - side2)*(semi - side3));
     }
     
+    protected void isTriangleValid(Side1) {
+		if (Side1 < Side2 + Side3 && Side2 < Side1 + Side3 && Side3 < Side1 + Side2){
+			if (Side1 <= 0||Side2 <= 0||Side3 <= 0){
+				System.out.println("In our universe we cannot have negative lengths, please enter in a positive side length.");
+				System.exit(0);
+			}
+    }
     
 }
