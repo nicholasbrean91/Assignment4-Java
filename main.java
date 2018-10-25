@@ -9,23 +9,19 @@ public class main {
 		Scanner userInput = new Scanner(System.in);
 		System.out.println("Choose One of the below options.\n \n 1) SSS for 3 Sides.\n 2) SAS for 1 Side then 1 Angel and 1 Side (angel is in between two sides).\n 3) ASA for 1 Angle 1 Side and 1 Angle.\n 4) SSA for 1 Side 1 Side and 1 Angle (not an angle between the sides).\n 5) AAS 2 Angles and 1 Side.\n");
 		System.out.print("Enter a number for the preset option you want: ");
-		presetChosen = userInput.nextInt();
+		presetChosen = userInput.nextLine();
 		
 		if (presetChosen == 1){
-			Secondary SSS = new Secondary();
 			System.out.print("Enter The first side length: ");
 			double Side1 = userInput.nextInt();
-			System.out.print("Enter The first side length: ");
+			System.out.print("Enter The second side length: ");
 			double Side2 = userInput.nextInt();
-			System.out.print("Enter The first side length: ");
+			System.out.print("Enter The third side length: ");
 			double Side3 = userInput.nextInt();
+			Secondary SSS = new Secondary();
 			
 			//Check Side Lengths
-			if (Side1 < Side2 + Side3 && Side2 < Side1 + Side3 && Side3 < Side1 + Side2){
-				if (Side1 <= 0||Side2 <= 0||Side3 <= 0){
-					System.out.println("In our universe we cannot have negative lengths, please enter in a positive side length.");
-					System.exit(0);
-				}
+
 				//Find Angels
 				double angelA = SSS.getAngleA(Side1, Side2, Side3);
 				double angelB = SSS.getAngleB(Side1, Side2, Side3);
