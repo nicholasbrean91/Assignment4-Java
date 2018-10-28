@@ -37,47 +37,48 @@ public class Secondary {
 	}
 	
 	
-	public static double perimeterCalc(double side1, double side2, double side3){
+	public static double perimeterCalc(){
 		double perimeter;
 		perimeter = _side1 + _side2 + _side3;
 		return perimeter;
 	}
 	
-	public static double triangleTypeCalc(double side1, double side2, double side3){
+	public static double triangleTypeCalc(){
 		
 		double typeTriangle1 = 1; //Iso
 		double typeTriangle2 = 2; //Equal
 		double typeTriangle3 = 3; //Squal
 		
-		if(side1 == side2 && side2 != side3 || side2 == side3 && side3 != side1 || side3 == side1 && side1 != side2){
+		if(_side1 == _side2 && _side2 != _side3 || _side2 == _side3 && _side3 != _side1 || _side3 == _side1 && _side1 != _side2){
 			return typeTriangle1;
-		}else if(side1 == side2 && side2 == side3){
+			
+		}else if(_side1 == _side2 && _side2 == _side3){
 			return typeTriangle2;
-		}else if (side1 != side2 && side2 != side3 && side1 != side3){
+		}else if (_side1 != _side2 && _side2 != _side3 && _side1 != _side3){
 			return typeTriangle3;
 		}else
 			
 		return -1;
-		
 	}
-    public static double getAngleA(double side1, double side2, double side3) {
-		   return (double) Math.acos((Math.pow(side1, 2) - Math.pow(side2, 2) - Math.pow(side3, 2)) / (-2 * side2 * side3));
+    public static double getAngleA() {
+		   return (double) Math.acos((Math.pow(_side1, 2) - Math.pow(_side2, 2) - Math.pow(_side3, 2)) / (-2 * _side2 * _side3));
 	}
 	 
-    public static double getAngleB(double side1, double side2, double side3) {
-		   return (double) Math.acos((Math.pow(side2, 2) - Math.pow(side1, 2) - Math.pow(side3, 2)) / (-2 * side1 * side3));
+    public static double getAngleB() {
+		   return (double) Math.acos((Math.pow(_side2, 2) - Math.pow(_side1, 2) - Math.pow(_side3, 2)) / (-2 * _side1 * _side3));
 	}
 
-    public static double getAngleC(double side1, double side2, double side3) {
-        return (double) Math.acos((Math.pow(side3, 2) - Math.pow(side1, 2) - Math.pow(side2, 2)) / (-2 * side2 * side1));
+    public static double getAngleC() {
+        return (double) Math.acos((Math.pow(_side3, 2) - Math.pow(_side1, 2) - Math.pow(_side2, 2)) / (-2 * _side2 * _side1));
     }
     
-    public static double getSideC(double angelA, double side1, double side2) {
-      return (double) Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2) - 2 * side1 * side2 * Math.cos(angelA));
+    public static double getSideC() {
+      double sideC = Math.sqrt((_side1 * _side1) + (_side2 * _side2) - 2 * _side1 * _side2 * _angelA);
+      return sideC;
     }
     
-    public static double semiPerimeter(double side1, double side2, double side3){
-    	return (double) (side1 + side2 + side3)/2;
+    public static double semiPerimeter(){
+    	return (double) (_side1 + _side2 + _side3)/2;
     }
     
     public static double heronFormula(double semi){
@@ -86,12 +87,13 @@ public class Secondary {
 
     
     protected void isTriangleValid() {
-		if (_side1 < _side2 + _side3 && _side2 < _side1 + _side3 && _side3 < _side1 + _side2){
-			if (_side1 <= 0||_side2 <= 0||_side3 <= 0){
-				System.out.println("In our universe we cannot have negative lengths, please enter in a positive side length.");
-				System.exit(0);
-			}
+		if (_side1 >= _side2 + _side3 || _side2 >= _side1 + _side3 || _side3 >= _side1 + _side2){
+			System.out.println("In our universe we cannot have negative lengths, please enter in a positive side length.");
+			System.exit(0);
+		}else{
+			
+			System.out.println("\nThis is a real Triangle");
     }
-    
+
 }
 }
