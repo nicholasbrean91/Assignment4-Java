@@ -1,12 +1,12 @@
 public class Secondary {
 	
-	private double _angelA;
-	private double _angelB;
-	private double _angelC;
-	private double _side1;
-	private double _side2;
-	private double _side3;
-	private double _info1;
+	private static double _angelA;
+	private static double _angelB;
+	private static double _angelC;
+	private static double _side1;
+	private static double _side2;
+	private static double _side3;
+	private static double _info1;
 	
 	public Secondary (String type,
 					  double info1,
@@ -37,7 +37,7 @@ public class Secondary {
 	}
 	
 	
-	public static double perimeterCalc(){
+	public static double perimeterCalc(double side1, double side2, double side3){
 		double perimeter;
 		perimeter = _side1 + _side2 + _side3;
 		return perimeter;
@@ -62,17 +62,16 @@ public class Secondary {
 	}
     public static double getAngleA(double side1, double side2, double side3) {
 		   return (double) Math.acos((Math.pow(side1, 2) - Math.pow(side2, 2) - Math.pow(side3, 2)) / (-2 * side2 * side3));
-		  }
+	}
 	 
     public static double getAngleB(double side1, double side2, double side3) {
 		   return (double) Math.acos((Math.pow(side2, 2) - Math.pow(side1, 2) - Math.pow(side3, 2)) / (-2 * side1 * side3));
-		  }
+	}
 
     public static double getAngleC(double side1, double side2, double side3) {
         return (double) Math.acos((Math.pow(side3, 2) - Math.pow(side1, 2) - Math.pow(side2, 2)) / (-2 * side2 * side1));
-      }
+    }
     
-    // get the length of side c given angle C and sides a and b
     public static double getSideC(double angelA, double side1, double side2) {
       return (double) Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2) - 2 * side1 * side2 * Math.cos(angelA));
     }
@@ -81,16 +80,18 @@ public class Secondary {
     	return (double) (side1 + side2 + side3)/2;
     }
     
-    public static double heronFormula(double side1, double side2, double side3, double semi){
-    	return (double) Math.sqrt(semi*(semi - side1)*(semi - side2)*(semi - side3));
+    public static double heronFormula(double semi){
+    	return (double) Math.sqrt(semi*(semi - _side1)*(semi - _side2)*(semi - _side3));
     }
+
     
-    protected void isTriangleValid(Side1) {
-		if (Side1 < Side2 + Side3 && Side2 < Side1 + Side3 && Side3 < Side1 + Side2){
-			if (Side1 <= 0||Side2 <= 0||Side3 <= 0){
+    protected void isTriangleValid() {
+		if (_side1 < _side2 + _side3 && _side2 < _side1 + _side3 && _side3 < _side1 + _side2){
+			if (_side1 <= 0||_side2 <= 0||_side3 <= 0){
 				System.out.println("In our universe we cannot have negative lengths, please enter in a positive side length.");
 				System.exit(0);
 			}
     }
     
+}
 }
