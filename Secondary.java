@@ -1,6 +1,6 @@
 public class Secondary {
 	
-	private static double _angelA;
+	public static double _angelA;
 	private static double _angelB;
 	private static double _angelC;
 	private static double _side1;
@@ -73,8 +73,10 @@ public class Secondary {
     }
     
     public static double getSideC() {
-      double sideC = Math.sqrt((_side1 * _side1) + (_side2 * _side2) - 2 * _side1 * _side2 * _angelA);
-      return sideC;
+        //_side2 = Math.sqrt((_side1 * _side1) + (_side3 * _side3) - (2 * _side1 * _side3 * _angelA));
+    	_side2 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side3, 2) - (2 * _side1 * _side3 * Math.cos(Math.toRadians(_angelA))));
+
+      return _side2;
     }
     
     public static double semiPerimeter(){
