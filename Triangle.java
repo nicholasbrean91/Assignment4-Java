@@ -68,12 +68,9 @@ public class Triangle {
 		}else if(type.equalsIgnoreCase("SAS")){
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			double sideC = obj.getSideC();
+			System.out.println(sideC);
 			obj.isTriangleValid();
-			
-			//System.out.println(sideC);
-			
 			
 		}
 	 }
   }
-
