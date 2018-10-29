@@ -36,6 +36,10 @@ public class Secondary {
 		
 	}
 	
+	public static void missingAngle(){
+		int totalDegrees = 180;
+		_angelC = totalDegrees - _angelA -_angelB;
+	}
 	
 	public static double perimeterCalc(){
 		double perimeter;
@@ -44,7 +48,6 @@ public class Secondary {
 	}
 	
 	public static double triangleTypeCalc(){
-		
 		double typeTriangle1 = 1; //Iso
 		double typeTriangle2 = 2; //Equal
 		double typeTriangle3 = 3; //Squal
@@ -57,7 +60,6 @@ public class Secondary {
 		}else if (_side1 != _side2 && _side2 != _side3 && _side1 != _side3){
 			return typeTriangle3;
 		}else
-			
 		return -1;
 	}
     public static double getAngleA() {
@@ -72,11 +74,10 @@ public class Secondary {
         return (double) Math.acos((Math.pow(_side3, 2) - Math.pow(_side1, 2) - Math.pow(_side2, 2)) / (-2 * _side2 * _side1));
     }
     
-    public static double getSideC() {
+    public static void getSide2() {
         //_side2 = Math.sqrt((_side1 * _side1) + (_side3 * _side3) - (2 * _side1 * _side3 * _angelA));
     	_side2 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side3, 2) - (2 * _side1 * _side3 * Math.cos(Math.toRadians(_angelA))));
 
-      return _side2;
     }
     
     public static double semiPerimeter(){
