@@ -29,16 +29,16 @@ public class Triangle {
 				obj.isTriangleValid();
 			
 				//Find Angels
-				double angelA = obj.getAngleA();
-				double angelB = obj.getAngleB();
-				double angelC = obj.getAngleC();
+				double angel1 = obj.getAngle1();
+				double angel2 = obj.getAngle2();
+				double angel3 = obj.getAngle3();
 				
 
 				double triangleType = Secondary.triangleTypeCalc();
 
 				
 				if (triangleType == 1){
-					if(angelA < 90 && angelB < 90 && angelC < 90){
+					if(angel1 < 90 && angel2 < 90 && angel3 < 90){
 						System.out.println("This triangle is an Acute Isosceles triangle");
 					}else{
 						System.out.println("This triangle is an Obtuse Isosceles triangle");
@@ -48,7 +48,7 @@ public class Triangle {
 					System.out.println("This triangle is an Equilateral triangle");
 				
 				}else if(triangleType == 3){
-					if(angelA < 90 && angelB < 90 && angelC <90){
+					if(angel1 < 90 && angel2 < 90 && angel3 <90){
 						System.out.println("This triangle is an Acute Squalene triangle");
 					}else{
 						System.out.println("This triangle is an Obtuse Squalene triangle");
@@ -71,13 +71,13 @@ public class Triangle {
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			obj.getSide2();
 			obj.isTriangleValid();
-			double angelA = obj.getAngleA();
-			double angelB = obj.getAngleB();
-			double angelC = obj.getAngleC();
+			double angel1 = obj.getAngle1();
+			double angel2 = obj.getAngle2();
+			double angel3 = obj.getAngle3();
 			double triangleType = Secondary.triangleTypeCalc();
 
 			if (triangleType == 1){
-				if(angelA < 90 && angelB < 90 && angelC < 90){
+				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
 					System.out.println("This triangle is an Acute Isosceles triangle");
 				}else{
 					System.out.println("This triangle is an Obtuse Isosceles triangle");
@@ -85,7 +85,7 @@ public class Triangle {
 			}else if(triangleType == 2){
 				System.out.println("This triangle is an Equilateral triangle");
 			}else if(triangleType == 3){
-				if(angelA < 90 && angelB < 90 && angelC <90){
+				if(angel1 < 90 && angel2 < 90 && angel3 <90){
 					System.out.println("This triangle is an Acute Squalene triangle");
 				}else{
 					System.out.println("This triangle is an Obtuse Squalene triangle");
