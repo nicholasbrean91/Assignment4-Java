@@ -1,8 +1,8 @@
 public class Secondary {
 	
-	public static double _angelA;
-	private static double _angelB;
-	private static double _angelC;
+	public static double _angel1;
+	private static double _angel2;
+	private static double _angel3;
 	private static double _side1;
 	private static double _side2;
 	private static double _side3;
@@ -18,19 +18,19 @@ public class Secondary {
 			this._side3 = info3;
 		}else if (type.equalsIgnoreCase("SAS")){
 			this._side1 = info1;
-			this._angelA = info2;
+			this._angel1 = info2;
 			this._side3 = info3;
 		}else if (type.equalsIgnoreCase("ASA")){
-			this._angelA = info1;
+			this._angel1 = info1;
 			this._side1 = info2;
-			this._angelB = info3;
+			this._angel2 = info3;
 		}else if (type.equalsIgnoreCase("SSA")){
 			this._side1 = info1;
 			this._side2 = info2;
-			this._angelA = info3;
+			this._angel1 = info3;
 		}else if (type.equalsIgnoreCase("AAS")){
-			this._angelA = info1;
-			this._angelB= info2;
+			this._angel1 = info1;
+			this._angel2= info2;
 			this._side1 = info3;
 		}
 		
@@ -38,7 +38,7 @@ public class Secondary {
 	
 	public static void missingAngle(){
 		int totalDegrees = 180;
-		_angelC = totalDegrees - _angelA -_angelB;
+		_angel3 = totalDegrees - _angel1 -_angel2;
 	}
 	
 	public static double perimeterCalc(){
@@ -62,21 +62,21 @@ public class Secondary {
 		}else
 		return -1;
 	}
-    public static double getAngleA() {
+    public static double getAngle1() {
 		   return (double) Math.acos((Math.pow(_side1, 2) - Math.pow(_side2, 2) - Math.pow(_side3, 2)) / (-2 * _side2 * _side3));
 	}
 	 
-    public static double getAngleB() {
+    public static double getAngle2() {
 		   return (double) Math.acos((Math.pow(_side2, 2) - Math.pow(_side1, 2) - Math.pow(_side3, 2)) / (-2 * _side1 * _side3));
 	}
 
-    public static double getAngleC() {
+    public static double getAngle3() {
         return (double) Math.acos((Math.pow(_side3, 2) - Math.pow(_side1, 2) - Math.pow(_side2, 2)) / (-2 * _side2 * _side1));
     }
     
     public static void getSide2() {
         //_side2 = Math.sqrt((_side1 * _side1) + (_side3 * _side3) - (2 * _side1 * _side3 * _angelA));
-    	_side2 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side3, 2) - (2 * _side1 * _side3 * Math.cos(Math.toRadians(_angelA))));
+    	_side2 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side3, 2) - (2 * _side1 * _side3 * Math.cos(Math.toRadians(_angel1))));
 
     }
     
