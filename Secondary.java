@@ -31,9 +31,19 @@ public class Secondary {
 		}else if (type.equalsIgnoreCase("AAS")){
 			this._angle1 = info1;
 			this._angle3 = info2;
-			this._side2 = info3;
+			this._side3 = info3;
 		}
 		
+	}
+	
+	public static void side1sinAAS(){
+		_side1 = (_side3 * (Math.sin(Math.toRadians(_angle1)))) /(Math.sin(Math.toRadians(_angle3)));
+		System.out.println(_side1 + "This is side 1");
+	}
+	
+	public static void side2sinAAS(){
+		_side2 = (_side3 * (Math.sin(Math.toRadians(_angle2)))) / (Math.sin(Math.toRadians(_angle3)));
+		System.out.println(_side2 + "This is side 2");
 	}
 	
 	public static void side2sin(){
