@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class Triangle {
 	public static void main(String args[]){
 		Scanner userInput = new Scanner(System.in);
-		DecimalFormat f = new DecimalFormat("##.00");
+
 		String type;
 		int info1 = 0;
 		int info2 = 0;
@@ -28,17 +28,16 @@ public class Triangle {
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			
+			//Calculations
 			obj.isTriangleValid();
 			obj.GetName();
 				
 			//Perimeter
-			double totalperm = obj.perimeterCalc();
-			System.out.println("The Area of the triangle is " + f.format(totalperm) + " units^2");
+			obj.perimeterCalc();
 				
 			//Area
-			double semi = obj.semiPerimeter();
-			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
+			obj.semiPerimeter();
+			obj.heronFormula();
 				
 		}else if(type.equalsIgnoreCase("SAS")){
 			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
@@ -49,20 +48,19 @@ public class Triangle {
 			System.out.print("Enter in side 3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Calculations
 			obj.getSide2cos();
 			obj.isTriangleValid();
 			obj.GetName();
 
 			//Perimeter	
-			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
+			obj.perimeterCalc();
 
 			//Area
-			double semi = obj.semiPerimeter();
-			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
-			
-			
+			obj.semiPerimeter();
+			obj.heronFormula();
+
 		}else if(type.equalsIgnoreCase("ASA")){
 			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
 			System.out.print("Enter in angle1 according to this preset " + type + " : ");
@@ -72,6 +70,8 @@ public class Triangle {
 			System.out.print("Enter in angle3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Calculations
 			obj.missingAngle3(); //Find Missing Angle
 			obj.side1sin(); //Fine side1
 			obj.side2sin();
@@ -79,13 +79,11 @@ public class Triangle {
 			obj.GetName();
 				
 			//Perimeter	
-			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
+			obj.perimeterCalc();
 			
 			//Area
-			double semi = obj.semiPerimeter();
-			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
+			obj.semiPerimeter();
+			obj.heronFormula();
 			
 		}else if (type.equalsIgnoreCase("AAS")) {
 			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
@@ -96,6 +94,8 @@ public class Triangle {
 			System.out.print("Enter in side3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Calculations
 			obj.missingAngle2();
 			obj.side1sinAAS();
 			obj.side2sinAAS();
@@ -103,13 +103,11 @@ public class Triangle {
 			obj.GetName();
 			
 			//Perimeter	
-			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
+			obj.perimeterCalc();
 			
 			//Area
-			double semi = obj.semiPerimeter();
-			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
+			obj.semiPerimeter();
+			obj.heronFormula();
 			
 		}else if(type.equalsIgnoreCase("SSA")){
 			System.out.println("\n'SSA' is when we know two sides and an angle that is not the angle between the sides.\n");
@@ -120,6 +118,8 @@ public class Triangle {
 			System.out.print("Enter in angle2 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Calculations
 			obj.LASfindC();
 			obj.missingAngle1();
 			obj.side1sinAAS();
@@ -127,13 +127,11 @@ public class Triangle {
 			obj.GetName();
 
 			//Perimeter	
-			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
+			obj.perimeterCalc();
 			
 			//Area
-			double semi = obj.semiPerimeter();
-			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
+			obj.semiPerimeter();
+			obj.heronFormula();
 			
 		}else{
 			System.out.println("Please Enter one of the presets above, Note it is case sensitive");
