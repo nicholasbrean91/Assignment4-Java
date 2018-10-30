@@ -1,5 +1,6 @@
 public class Secondary {
 	
+	static int totalDegrees = 180;
 	public static double _angle1;
 	private static double _angle2;
 	private static double _angle3;
@@ -25,15 +26,23 @@ public class Secondary {
 			this._side3 = info2;
 			this._angle2 = info3;
 		}else if (type.equalsIgnoreCase("SSA")){
-			this._side1 = info1;
-			this._side2 = info2;
-			this._angle1 = info3;
+			this._side2 = info1;
+			this._side3 = info2;
+			this._angle2 = info3;
 		}else if (type.equalsIgnoreCase("AAS")){
 			this._angle1 = info1;
 			this._angle3 = info2;
 			this._side3 = info3;
 		}
 		
+	}
+	
+	public static void LASfindC(){
+		double HofS = (_side3 * (Math.sin(Math.toRadians(_angle2))) / _side2);
+		System.out.println("Side3 = " + _side3 + " Side2 = " + _side2 + " angle2 = " + _angle2);
+		double angleInRadians  = (Math.asin(HofS));
+		_angle3 = angleInRadians / Math.PI * 180;
+		System.out.println("This is angle 3 " + _angle3);
 	}
 	
 	public static void side1sinAAS(){
@@ -56,14 +65,17 @@ public class Secondary {
 		System.out.println(_side1 + "This is side 1");
 	}
 	
+	public static void missingAngle1(){
+		_angle1 = totalDegrees - _angle3 - _angle2;
+	}
+	
 	public static void missingAngle3(){
-		int totalDegrees = 180;
+		
 		_angle3 = totalDegrees - _angle1 -_angle2;
 		System.out.println("the missing angle is " +  _angle3);
 	}
 	
 	public static void missingAngle2(){
-		int totalDegrees = 180;
 		_angle2 = totalDegrees - _angle1 -_angle3;
 		System.out.println("the missing angle is " +  _angle2);
 	}
