@@ -19,7 +19,7 @@ public class Triangle {
 
 		
 		if (type.equalsIgnoreCase("SSS")){
-			System.out.println("\n'SSS' is when you have 3 sides of a Triangle.\n");
+			System.out.println("\n'SSS' is when you have 3 sides of a Triangle.\n"); //Needed to keep these Print statemnts inside each function becuase each is a little different
 			System.out.print("Enter in side 1 according to this preset " + type + " : ");
 			info1 = userInput.nextInt(); 
 			System.out.print("Enter in side 2 according to this preset " + type + " : ");
