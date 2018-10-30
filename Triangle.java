@@ -29,16 +29,16 @@ public class Triangle {
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			
 			obj.isTriangleValid();
-			Secondary.triangleTypeCalc();
+			obj.GetName();
 				
 			//Perimeter
 			double totalperm = obj.perimeterCalc();
-			System.out.println("The total Perimeter is " + totalperm + "cm" );
+			System.out.println("The Area of the triangle is " + f.format(totalperm) + " units^2");
 				
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-			System.out.println("The area of the triangle is " + area + "cm^2");
+			System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
 				
 		}else if(type.equalsIgnoreCase("SAS")){
 			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
@@ -51,16 +51,16 @@ public class Triangle {
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			obj.getSide2cos();
 			obj.isTriangleValid();
-			Secondary.triangleTypeCalc();
+			obj.GetName();
 
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
+			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
 
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
+			System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
 			
 			
 		}else if(type.equalsIgnoreCase("ASA")){
@@ -76,16 +76,16 @@ public class Triangle {
 			obj.side1sin(); //Fine side1
 			obj.side2sin();
 			obj.isTriangleValid();
-			Secondary.triangleTypeCalc();
+			obj.GetName();
 				
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
+			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
+			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
 			
 		}else if (type.equalsIgnoreCase("AAS")) {
 			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
@@ -100,16 +100,16 @@ public class Triangle {
 			obj.side1sinAAS();
 			obj.side2sinAAS();
 			obj.isTriangleValid();
-			Secondary.triangleTypeCalc();
+			obj.GetName();
 			
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
+			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
+			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
 			
 		}else if(type.equalsIgnoreCase("SSA")){
 			System.out.println("\n'SSA' is when we know two sides and an angle that is not the angle between the sides.\n");
@@ -124,16 +124,16 @@ public class Triangle {
 			obj.missingAngle1();
 			obj.side1sinAAS();
 			obj.isTriangleValid();
-			Secondary.triangleTypeCalc();
+			obj.GetName();
 
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
-			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
+			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " units" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
+			System.out.println("The Area of the triangle is " + f.format(area) + " units^2" );
 			
 		}else{
 			System.out.println("Please Enter one of the presets above, Note it is case sensitive");
