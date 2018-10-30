@@ -70,7 +70,6 @@ public class Secondary {
 	}
 	
 	public static void missingAngle3(){
-		
 		_angle3 = totalDegrees - _angle1 -_angle2;
 		System.out.println("the missing angle is " +  _angle3);
 	}
@@ -95,7 +94,6 @@ public class Secondary {
 			}else{
 				System.out.println("This triangle is an Obtuse Isosceles triangle");
 				}
-			
 		}else if(_side1 == _side2 && _side2 == _side3){
 				System.out.println("This triangle is an Equilateral triangle");
 		
@@ -103,14 +101,13 @@ public class Secondary {
 			
 			if(_angle1 < 90 && _angle2 < 90 && _angle3 <90){
 				System.out.println("This triangle is an Acute Squalene triangle");
+				
 			}else{
 				System.out.println("This triangle is an Obtuse Squalene triangle");
 				}
-			
 		}else{
 			System.out.println("You should not be here.");
 		}
-		
 	}
     public static double getAngle1() {
 		   return (double) Math.acos((Math.pow(_side1, 2) - Math.pow(_side2, 2) - Math.pow(_side3, 2)) / (-2 * _side2 * _side3));
@@ -132,7 +129,7 @@ public class Secondary {
     public static void getSide3cos() {
         _side3 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side2, 2) - 2 * _side1 * _side2 * Math.cos(Math.toRadians(_angle3)));
         System.out.println("Side length 3 is " + _side3);
-      }
+    }
     
     public static double semiPerimeter(){
     	return (double) (_side1 + _side2 + _side3)/2;
@@ -141,7 +138,6 @@ public class Secondary {
     public static double heronFormula(double semi){
     	return (double) Math.sqrt(semi*(semi - _side1)*(semi - _side2)*(semi - _side3));
     }
-
     
     protected void isTriangleValid() {
 		if (_side1 >= _side2 + _side3 || _side2 >= _side1 + _side3 || _side3 >= _side1 + _side2){
@@ -149,7 +145,7 @@ public class Secondary {
 			System.exit(0);
 		}else{
 			System.out.println("\nThis is a real Triangle");
-    }
+		}
 
-}
+    }
 }
