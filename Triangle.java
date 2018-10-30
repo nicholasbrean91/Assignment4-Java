@@ -9,21 +9,24 @@ public class Triangle {
 		Scanner userInput = new Scanner(System.in);
 		DecimalFormat f = new DecimalFormat("##.00");
 		String type;
-		int info1;
-		int info2;
-		int info3;
+		int info1 = 0;
+		int info2 = 0;
+		int info3 = 0;
 		
 		System.out.println("Choose One of the below options.\n \n 1) SSS for 3 Sides.\n 2) SAS for 1 Side then 1 Angel and 1 Side (angel is in between two sides).\n 3) ASA for 1 Angle 1 Side and 1 Angle.\n 4) SSA for 1 Side 1 Side and 1 Angle (not an angle between the sides).\n 5) AAS 2 Angles and 1 Side.\n");
 		System.out.print("Enter one of the abberivations for selection. (Ex.'SSS' for Side Side Side): ");
 		type = userInput.nextLine(); //What you're solving for
-		System.out.print("Enter in the first part of information for the your preset " + type + " : ");
-		info1 = userInput.nextInt(); 
-		System.out.print("Enter in the first part of information for the your preset " + type + " : ");
-		info2 = userInput.nextInt();
-		System.out.print("Enter in the first part of information for the your preset " + type + " : ");
-		info3 = userInput.nextInt();
+
 		
 		if (type.equalsIgnoreCase("SSS")){
+			System.out.println("\n'SSS' is when you have 3 sides of a Triangle.\n");
+			
+			System.out.print("Enter in side 1 according to this preset " + type + " : ");
+			info1 = userInput.nextInt(); 
+			System.out.print("Enter in side 2 according to this preset " + type + " : ");
+			info2 = userInput.nextInt();
+			System.out.print("Enter in side 3 according to this preset " + type + " : ");
+			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			
 				obj.isTriangleValid();
@@ -43,12 +46,11 @@ public class Triangle {
 					}else{
 						System.out.println("This triangle is an Obtuse Isosceles triangle");
 					}
-					
 				}else if(triangleType == 2){
 					System.out.println("This triangle is an Equilateral triangle");
 				
 				}else if(triangleType == 3){
-					if(angel1 < 90 && angel2 < 90 && angel3 <90){
+					if(angel1 < 90 && angel2 < 90 && angel3 < 90){
 						System.out.println("This triangle is an Acute Squalene triangle");
 					}else{
 						System.out.println("This triangle is an Obtuse Squalene triangle");
@@ -68,8 +70,15 @@ public class Triangle {
 			}	
 				
 		}else if(type.equalsIgnoreCase("SAS")){
+			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
+			System.out.print("Enter in side 1 according to this preset " + type + " : ");
+			info1 = userInput.nextInt(); 
+			System.out.print("Enter in angle2 according to this preset " + type + " : ");
+			info2 = userInput.nextInt();
+			System.out.print("Enter in side 3 according to this preset " + type + " : ");
+			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
-			obj.getSide2();
+			obj.getSide2cos();
 			obj.isTriangleValid();
 			double angel1 = obj.getAngle1();
 			double angel2 = obj.getAngle2();
@@ -90,7 +99,7 @@ public class Triangle {
 				}else{
 					System.out.println("This triangle is an Obtuse Squalene triangle");
 			}
-				//Perimeter	
+			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
 			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
@@ -103,7 +112,19 @@ public class Triangle {
 			
 			}
 		}else if(type.equalsIgnoreCase("ASA")){
+			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
+			System.out.print("Enter in angle1 according to this preset " + type + " : ");
+			info1 = userInput.nextInt(); 
+			System.out.print("Enter in side2 according to this preset " + type + " : ");
+			info2 = userInput.nextInt();
+			System.out.print("Enter in angle3 according to this preset " + type + " : ");
+			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			obj.missingAngle(); //Find Missing Angle
+			obj.side2sin(); //Find side2
+			obj.side1sin(); //Fine side1
+			
+			
 		}
 	 }
   }
