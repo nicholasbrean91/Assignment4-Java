@@ -120,7 +120,7 @@ public class Triangle {
 			System.out.print("Enter in angle3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
-			obj.missingAngle(); //Find Missing Angle
+			obj.missingAngle3(); //Find Missing Angle
 			obj.side1sin(); //Fine side1
 			obj.side2sin();
 			
@@ -144,6 +144,7 @@ public class Triangle {
 				}else{
 					System.out.println("This triangle is an Obtuse Squalene triangle");
 			}
+				
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
@@ -154,9 +155,19 @@ public class Triangle {
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
 			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
-			
 			}
 			
+		}else if (type.equalsIgnoreCase("AAS")) {
+			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
+			System.out.print("Enter in angle1 according to this preset " + type + " : ");
+			info1 = userInput.nextInt(); 
+			System.out.print("Enter in angle3 according to this preset " + type + " : ");
+			info2 = userInput.nextInt();
+			System.out.print("Enter in side2 according to this preset " + type + " : ");
+			info3 = userInput.nextInt();
+			Secondary obj = new Secondary(type, info1, info2, info3);
+			obj.missingAngle2();
+			obj.side2sin();
 		}
-	 }
-  }
+	}
+ }
