@@ -37,13 +37,13 @@ public class Secondary {
 	}
 	
 	public static void side2sin(){
-		_side2 = (Math.sin(Math.toRadians(_angle1))) * (_side3 / (Math.sin(Math.toRadians(_angle3))));
+		_side2 = (_side3 / (Math.sin(Math.toRadians(_angle3)))) * ((Math.sin(Math.toRadians(_angle2))));
 		System.out.println(_side2 + " this is side 2");
 	}
 	
-	public static void side1sin(){
-		_side1 = (_side3 / (Math.sin(Math.toRadians(_angle3))) * (Math.sin(Math.toRadians(_angle1))));
-		System.out.println(_side1 + " this is side 1");
+	public static void side1sin() {
+		_side1 = (_side3/(Math.sin(Math.toRadians(_angle3)))) * ((Math.sin(Math.toRadians(_angle1))));
+		System.out.println(_side1 + "This is side 1");
 	}
 	
 	public static void missingAngle(){
