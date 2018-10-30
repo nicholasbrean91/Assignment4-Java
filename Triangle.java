@@ -201,7 +201,51 @@ public class Triangle {
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
 			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
+			
 		}else if(type.equalsIgnoreCase("SSA")){
+			System.out.println("\n'SSA' is when we know two sides and an angle that is not the angle between the sides.\n");
+			System.out.print("Enter in side2 according to this preset " + type + " : ");
+			info1 = userInput.nextInt(); 
+			System.out.print("Enter in side3 according to this preset " + type + " : ");
+			info2 = userInput.nextInt();
+			System.out.print("Enter in angle2 according to this preset " + type + " : ");
+			info3 = userInput.nextInt();
+			Secondary obj = new Secondary(type, info1, info2, info3);
+			obj.LASfindC();
+			obj.missingAngle1();
+			obj.side1sinAAS();
+			
+			obj.isTriangleValid();
+			double angel1 = obj.getAngle1();
+			double angel2 = obj.getAngle2();
+			double angel3 = obj.getAngle3();
+			double triangleType = Secondary.triangleTypeCalc();
+
+			if (triangleType == 1){
+				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
+					System.out.println("This triangle is an Acute Isosceles triangle");
+				}else{
+					System.out.println("This triangle is an Obtuse Isosceles triangle");
+				}
+			}else if(triangleType == 2){
+				System.out.println("This triangle is an Equilateral triangle");
+			}else if(triangleType == 3){
+				if(angel1 < 90 && angel2 < 90 && angel3 <90){
+					System.out.println("This triangle is an Acute Squalene triangle");
+				}else{
+					System.out.println("This triangle is an Obtuse Squalene triangle");
+				}
+			}
+			//Perimeter	
+			double totalperm = obj.perimeterCalc();
+			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
+			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
+			//System.out.println("The total Perimeter is " + totalperm + "cm" );
+			
+			//Area
+			double semi = obj.semiPerimeter();
+			double area = obj.heronFormula(semi);
+			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
 			
 		}
 	}
