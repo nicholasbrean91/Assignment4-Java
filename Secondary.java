@@ -86,20 +86,31 @@ public class Secondary {
 		return perimeter;
 	}
 	
-	public static double triangleTypeCalc(){
-		double typeTriangle1 = 1; //Iso
-		double typeTriangle2 = 2; //Equal
-		double typeTriangle3 = 3; //Squal
+	public static void triangleTypeCalc(){
 		
 		if(_side1 == _side2 && _side2 != _side3 || _side2 == _side3 && _side3 != _side1 || _side3 == _side1 && _side1 != _side2){
-			return typeTriangle1;
+			
+			if(_angle1 < 90 && _angle2 < 90 && _angle3 < 90){
+				System.out.println("This triangle is an Acute Isosceles triangle");
+			}else{
+				System.out.println("This triangle is an Obtuse Isosceles triangle");
+				}
 			
 		}else if(_side1 == _side2 && _side2 == _side3){
-			return typeTriangle2;
+				System.out.println("This triangle is an Equilateral triangle");
+		
 		}else if (_side1 != _side2 && _side2 != _side3 && _side1 != _side3){
-			return typeTriangle3;
-		}else
-		return -1;
+			
+			if(_angle1 < 90 && _angle2 < 90 && _angle3 <90){
+				System.out.println("This triangle is an Acute Squalene triangle");
+			}else{
+				System.out.println("This triangle is an Obtuse Squalene triangle");
+				}
+			
+		}else{
+			System.out.println("You should not be here.");
+		}
+		
 	}
     public static double getAngle1() {
 		   return (double) Math.acos((Math.pow(_side1, 2) - Math.pow(_side2, 2) - Math.pow(_side3, 2)) / (-2 * _side2 * _side3));
