@@ -20,7 +20,6 @@ public class Triangle {
 		
 		if (type.equalsIgnoreCase("SSS")){
 			System.out.println("\n'SSS' is when you have 3 sides of a Triangle.\n");
-			
 			System.out.print("Enter in side 1 according to this preset " + type + " : ");
 			info1 = userInput.nextInt(); 
 			System.out.print("Enter in side 2 according to this preset " + type + " : ");
@@ -39,7 +38,6 @@ public class Triangle {
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
-				
 			System.out.println("The area of the triangle is " + area + "cm^2");
 				
 		}else if(type.equalsIgnoreCase("SAS")){
@@ -58,9 +56,7 @@ public class Triangle {
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
-			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
-			//System.out.println("The total Perimeter is " + totalperm + "cm" );
-			
+
 			//Area
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
@@ -68,7 +64,6 @@ public class Triangle {
 			
 			
 		}else if(type.equalsIgnoreCase("ASA")){
-			
 			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
 			System.out.print("Enter in angle1 according to this preset " + type + " : ");
 			info1 = userInput.nextInt(); 
@@ -86,8 +81,6 @@ public class Triangle {
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
-			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
-			//System.out.println("The total Perimeter is " + totalperm + "cm" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
@@ -112,8 +105,6 @@ public class Triangle {
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
-			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
-			//System.out.println("The total Perimeter is " + totalperm + "cm" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
@@ -132,15 +123,12 @@ public class Triangle {
 			obj.LASfindC();
 			obj.missingAngle1();
 			obj.side1sinAAS();
-			
 			obj.isTriangleValid();
 			Secondary.triangleTypeCalc();
 
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
-			//double roundedperm = Math.round(totalperm * 100.0) / 100.0;
-			//System.out.println("The total Perimeter is " + totalperm + "cm" );
 			
 			//Area
 			double semi = obj.semiPerimeter();
