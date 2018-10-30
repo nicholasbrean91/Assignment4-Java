@@ -30,8 +30,8 @@ public class Secondary {
 			this._angle1 = info3;
 		}else if (type.equalsIgnoreCase("AAS")){
 			this._angle1 = info1;
-			this._angle2= info2;
-			this._side1 = info3;
+			this._angle3 = info2;
+			this._side2 = info3;
 		}
 		
 	}
@@ -46,10 +46,16 @@ public class Secondary {
 		System.out.println(_side1 + "This is side 1");
 	}
 	
-	public static void missingAngle(){
+	public static void missingAngle3(){
 		int totalDegrees = 180;
 		_angle3 = totalDegrees - _angle1 -_angle2;
 		System.out.println("the missing angle is " +  _angle3);
+	}
+	
+	public static void missingAngle2(){
+		int totalDegrees = 180;
+		_angle2 = totalDegrees - _angle1 -_angle3;
+		System.out.println("the missing angle is " +  _angle2);
 	}
 	
 	public static double perimeterCalc(){
