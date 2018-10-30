@@ -29,45 +29,18 @@ public class Triangle {
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			
-				obj.isTriangleValid();
-			
-				//Find Angels
-				double angel1 = obj.getAngle1();
-				double angel2 = obj.getAngle2();
-				double angel3 = obj.getAngle3();
+			obj.isTriangleValid();
+			Secondary.triangleTypeCalc();
 				
-
-				double triangleType = Secondary.triangleTypeCalc();
-
+			//Perimeter
+			double totalperm = obj.perimeterCalc();
+			System.out.println("The total Perimeter is " + totalperm + "cm" );
 				
-				if (triangleType == 1){
-					if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-						System.out.println("This triangle is an Acute Isosceles triangle");
-					}else{
-						System.out.println("This triangle is an Obtuse Isosceles triangle");
-					}
-				}else if(triangleType == 2){
-					System.out.println("This triangle is an Equilateral triangle");
+			//Area
+			double semi = obj.semiPerimeter();
+			double area = obj.heronFormula(semi);
 				
-				}else if(triangleType == 3){
-					if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-						System.out.println("This triangle is an Acute Squalene triangle");
-					}else{
-						System.out.println("This triangle is an Obtuse Squalene triangle");
-				}
-				//Perimeter
-				double totalperm = obj.perimeterCalc();
-				System.out.println("The total Perimeter is " + totalperm + "cm" );
-				
-				//Area
-				double semi = obj.semiPerimeter();
-				double area = obj.heronFormula(semi);
-				
-				System.out.println("The area of the triangle is " + area + "cm^2");
-				
-			}else{
-				System.out.println("Enter a correct Triangle.");	
-			}	
+			System.out.println("The area of the triangle is " + area + "cm^2");
 				
 		}else if(type.equalsIgnoreCase("SAS")){
 			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
@@ -80,25 +53,8 @@ public class Triangle {
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			obj.getSide2cos();
 			obj.isTriangleValid();
-			double angel1 = obj.getAngle1();
-			double angel2 = obj.getAngle2();
-			double angel3 = obj.getAngle3();
-			double triangleType = Secondary.triangleTypeCalc();
+			Secondary.triangleTypeCalc();
 
-			if (triangleType == 1){
-				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-					System.out.println("This triangle is an Acute Isosceles triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Isosceles triangle");
-				}
-			}else if(triangleType == 2){
-				System.out.println("This triangle is an Equilateral triangle");
-			}else if(triangleType == 3){
-				if(angel1 < 90 && angel2 < 90 && angel3 <90){
-					System.out.println("This triangle is an Acute Squalene triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Squalene triangle");
-			}
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
@@ -110,8 +66,9 @@ public class Triangle {
 			double area = obj.heronFormula(semi);
 			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
 			
-			}
+			
 		}else if(type.equalsIgnoreCase("ASA")){
+			
 			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
 			System.out.print("Enter in angle1 according to this preset " + type + " : ");
 			info1 = userInput.nextInt(); 
@@ -123,27 +80,8 @@ public class Triangle {
 			obj.missingAngle3(); //Find Missing Angle
 			obj.side1sin(); //Fine side1
 			obj.side2sin();
-			
 			obj.isTriangleValid();
-			double angel1 = obj.getAngle1();
-			double angel2 = obj.getAngle2();
-			double angel3 = obj.getAngle3();
-			double triangleType = Secondary.triangleTypeCalc();
-
-			if (triangleType == 1){
-				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-					System.out.println("This triangle is an Acute Isosceles triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Isosceles triangle");
-				}
-			}else if(triangleType == 2){
-				System.out.println("This triangle is an Equilateral triangle");
-			}else if(triangleType == 3){
-				if(angel1 < 90 && angel2 < 90 && angel3 <90){
-					System.out.println("This triangle is an Acute Squalene triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Squalene triangle");
-			}
+			Secondary.triangleTypeCalc();
 				
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
@@ -155,7 +93,6 @@ public class Triangle {
 			double semi = obj.semiPerimeter();
 			double area = obj.heronFormula(semi);
 			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
-			}
 			
 		}else if (type.equalsIgnoreCase("AAS")) {
 			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
@@ -169,28 +106,9 @@ public class Triangle {
 			obj.missingAngle2();
 			obj.side1sinAAS();
 			obj.side2sinAAS();
-			
 			obj.isTriangleValid();
-			double angel1 = obj.getAngle1();
-			double angel2 = obj.getAngle2();
-			double angel3 = obj.getAngle3();
-			double triangleType = Secondary.triangleTypeCalc();
-
-			if (triangleType == 1){
-				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-					System.out.println("This triangle is an Acute Isosceles triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Isosceles triangle");
-				}
-			}else if(triangleType == 2){
-				System.out.println("This triangle is an Equilateral triangle");
-			}else if(triangleType == 3){
-				if(angel1 < 90 && angel2 < 90 && angel3 <90){
-					System.out.println("This triangle is an Acute Squalene triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Squalene triangle");
-				}
-			}
+			Secondary.triangleTypeCalc();
+			
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
@@ -216,26 +134,8 @@ public class Triangle {
 			obj.side1sinAAS();
 			
 			obj.isTriangleValid();
-			double angel1 = obj.getAngle1();
-			double angel2 = obj.getAngle2();
-			double angel3 = obj.getAngle3();
-			double triangleType = Secondary.triangleTypeCalc();
+			Secondary.triangleTypeCalc();
 
-			if (triangleType == 1){
-				if(angel1 < 90 && angel2 < 90 && angel3 < 90){
-					System.out.println("This triangle is an Acute Isosceles triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Isosceles triangle");
-				}
-			}else if(triangleType == 2){
-				System.out.println("This triangle is an Equilateral triangle");
-			}else if(triangleType == 3){
-				if(angel1 < 90 && angel2 < 90 && angel3 <90){
-					System.out.println("This triangle is an Acute Squalene triangle");
-				}else{
-					System.out.println("This triangle is an Obtuse Squalene triangle");
-				}
-			}
 			//Perimeter	
 			double totalperm = obj.perimeterCalc();
 			System.out.println("The Permiter of the triangle is " + f.format(totalperm) + " cm" );
@@ -247,6 +147,8 @@ public class Triangle {
 			double area = obj.heronFormula(semi);
 			System.out.println("The Area of the triangle is " + f.format(area) + " cm^2" );
 			
+		}else{
+			System.out.println("Please Enter one of the presets above, Note it is case sensitive");
 		}
 	}
  }
