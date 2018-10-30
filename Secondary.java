@@ -1,13 +1,21 @@
+import java.text.DecimalFormat;
+
 public class Secondary {
 	
-	static int totalDegrees = 180;
-	public static double _angle1;
+	static DecimalFormat f = new DecimalFormat("##.00");
+	private static double area;
+	private static double semiPerm;
+	private static int totalDegrees = 180;
+	private static double _angle1;
 	private static double _angle2;
 	private static double _angle3;
 	private static double _side1;
 	private static double _side2;
 	private static double _side3;
 	private static double _info1;
+	private static double _altAngle;
+	private static double _altAngle1;
+	private static double _side1alt;
 	
 	public Secondary (String type,
 					  double info1,
@@ -42,50 +50,51 @@ public class Secondary {
 		System.out.println("Side3 = " + _side3 + " Side2 = " + _side2 + " angle2 = " + _angle2);
 		double angleInRadians  = (Math.asin(HofS));
 		_angle3 = angleInRadians / Math.PI * 180;
-		System.out.println("This is angle 3 " + _angle3);
+		//System.out.println("This is angle 3 " + _angle3);
 	}
+	
 	
 	public static void side1sinAAS(){
 		_side1 = (_side3 * (Math.sin(Math.toRadians(_angle1)))) /(Math.sin(Math.toRadians(_angle3)));
-		System.out.println(_side1 + "This is side 1");
+		//System.out.println(_side1 + "This is side 1");
 	}
 	
 	public static void side2sinAAS(){
 		_side2 = (_side3 * (Math.sin(Math.toRadians(_angle2)))) / (Math.sin(Math.toRadians(_angle3)));
-		System.out.println(_side2 + "This is side 2");
+		//System.out.println(_side2 + "This is side 2");
 	}
 	
 	public static void side2sin(){
 		_side2 = (_side3 / (Math.sin(Math.toRadians(_angle3)))) * ((Math.sin(Math.toRadians(_angle2))));
-		System.out.println(_side2 + " this is side 2");
+		//System.out.println(_side2 + " this is side 2");
 	}
 	
 	public static void side1sin() {
 		_side1 = (_side3/(Math.sin(Math.toRadians(_angle3)))) * ((Math.sin(Math.toRadians(_angle1))));
-		System.out.println(_side1 + "This is side 1");
+		//System.out.println(_side1 + "This is side 1");
 	}
 	
 	public static void missingAngle1(){
 		_angle1 = totalDegrees - _angle3 - _angle2;
 	}
 	
+	
 	public static void missingAngle3(){
 		_angle3 = totalDegrees - _angle1 -_angle2;
-		System.out.println("the missing angle is " +  _angle3);
+		//System.out.println("the missing angle is " +  _angle3);
 	}
 	
 	public static void missingAngle2(){
 		_angle2 = totalDegrees - _angle1 -_angle3;
-		System.out.println("the missing angle is " +  _angle2);
+		//System.out.println("the missing angle is " +  _angle2);
 	}
 	
-	public static double perimeterCalc(){
-		double perimeter;
-		perimeter = _side1 + _side2 + _side3;
-		return perimeter;
+	public static void perimeterCalc(){
+		double perimeter = _side1 + _side2 + _side3;
+		System.out.println("The Area of the triangle is " + f.format(perimeter) + " units^2");
 	}
 	
-	public static void triangleTypeCalc(){
+	public static void GetName(){
 		
 		if(_side1 == _side2 && _side2 != _side3 || _side2 == _side3 && _side3 != _side1 || _side3 == _side1 && _side1 != _side2){
 			
@@ -128,15 +137,16 @@ public class Secondary {
     
     public static void getSide3cos() {
         _side3 = Math.sqrt(Math.pow(_side1, 2) + Math.pow(_side2, 2) - 2 * _side1 * _side2 * Math.cos(Math.toRadians(_angle3)));
-        System.out.println("Side length 3 is " + _side3);
+        //System.out.println("Side length 3 is " + _side3);
     }
     
-    public static double semiPerimeter(){
-    	return (double) (_side1 + _side2 + _side3)/2;
+    public static void semiPerimeter(){
+    semiPerm = (_side1 + _side2 + _side3)/2;
     }
     
-    public static double heronFormula(double semi){
-    	return (double) Math.sqrt(semi*(semi - _side1)*(semi - _side2)*(semi - _side3));
+    public static void heronFormula(){
+    area = Math.sqrt(semiPerm*(semiPerm - _side1)*(semiPerm - _side2)*(semiPerm - _side3));
+    System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
     }
     
     protected void isTriangleValid() {
@@ -146,6 +156,5 @@ public class Secondary {
 		}else{
 			System.out.println("\nThis is a real Triangle");
 		}
-
     }
 }
