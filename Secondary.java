@@ -1,5 +1,7 @@
-import java.text.DecimalFormat;
+//Site the source: https://gist.github.com/brysonian/116503 
+//I used his formulas for calculating Cosine.
 
+import java.text.DecimalFormat;
 public class Secondary {
 	
 	static DecimalFormat f = new DecimalFormat("##.00");
@@ -16,6 +18,9 @@ public class Secondary {
 	private static double _altAngle;
 	private static double _altAngle1;
 	private static double _side1alt;
+	private static double _height3;
+	private static double _height2;
+	private static double _height1;
 	
 	public Secondary (String type,
 					  double info1,
@@ -45,14 +50,27 @@ public class Secondary {
 		
 	}
 	
+	public static void heightAngle3(){
+		_height3 = (area * 2) / _side3;
+		System.out.println("\n" + f.format(_height3) + " This is the height of Angle 3.\n");
+	}
+	
+	public static void heightAngle2(){
+		_height2 = (area * 2) / _side2;
+		System.out.println(f.format(_height2) + " This is the height of Angle 2.\n");
+	}
+	
+	public static void heightAngle1(){
+		_height1 = (area * 2) / _side1;
+		System.out.println(f.format(_height1) + " This is the height of Angle 1.\n");
+	}
+	
 	public static void LASfindC(){
 		double HofS = (_side3 * (Math.sin(Math.toRadians(_angle2))) / _side2);
-		System.out.println("Side3 = " + _side3 + " Side2 = " + _side2 + " angle2 = " + _angle2);
 		double angleInRadians  = (Math.asin(HofS));
 		_angle3 = angleInRadians / Math.PI * 180;
 		//System.out.println("This is angle 3 " + _angle3);
 	}
-	
 	
 	public static void side1sinAAS(){
 		_side1 = (_side3 * (Math.sin(Math.toRadians(_angle1)))) /(Math.sin(Math.toRadians(_angle3)));
@@ -118,17 +136,6 @@ public class Secondary {
 			System.out.println("You should not be here.");
 		}
 	}
-    public static double getAngle1() {
-		   return (double) Math.acos((Math.pow(_side1, 2) - Math.pow(_side2, 2) - Math.pow(_side3, 2)) / (-2 * _side2 * _side3));
-	}
-	 
-    public static double getAngle2() {
-		   return (double) Math.acos((Math.pow(_side2, 2) - Math.pow(_side1, 2) - Math.pow(_side3, 2)) / (-2 * _side1 * _side3));
-	}
-
-    public static double getAngle3() {
-        return (double) Math.acos((Math.pow(_side3, 2) - Math.pow(_side1, 2) - Math.pow(_side2, 2)) / (-2 * _side2 * _side1));
-    }
     
     public static void getSide2cos() {
         //_side2 = Math.sqrt((_side1 * _side1) + (_side3 * _side3) - (2 * _side1 * _side3 * _angelA));
