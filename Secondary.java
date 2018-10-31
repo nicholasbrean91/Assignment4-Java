@@ -52,17 +52,17 @@ public class Secondary {
 	
 	public static void heightAngle3(){
 		_height3 = (area * 2) / _side3;
-		System.out.println("\n" + f.format(_height3) + " This is the height of Angle 3.\n");
+		System.out.println("\n" + f.format(_height3) + " This is the height of Angle 3.");
 	}
 	
 	public static void heightAngle2(){
 		_height2 = (area * 2) / _side2;
-		System.out.println(f.format(_height2) + " This is the height of Angle 2.\n");
+		System.out.println(f.format(_height2) + " This is the height of Angle 2.");
 	}
 	
 	public static void heightAngle1(){
 		_height1 = (area * 2) / _side1;
-		System.out.println(f.format(_height1) + " This is the height of Angle 1.\n");
+		System.out.println(f.format(_height1) + " This is the height of Angle 1.");
 	}
 	
 	public static void LASfindC(){
@@ -109,7 +109,7 @@ public class Secondary {
 	
 	public static void perimeterCalc(){
 		double perimeter = _side1 + _side2 + _side3;
-		System.out.println("The Area of the triangle is " + f.format(perimeter) + " units^2");
+		System.out.println("The Perimeter of the triangle is " + f.format(perimeter) + " units^2");
 	}
 	
 	public static void GetName(){
