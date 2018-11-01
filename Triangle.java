@@ -47,6 +47,11 @@ public class Triangle {
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
+			
+			//Radius
+			obj.radiusIncircle();
+			obj.SCalc();
+			obj.OuterRadis();
 				
 		}else if(type.equalsIgnoreCase("SAS")){
 			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
@@ -74,6 +79,11 @@ public class Triangle {
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
+			
+			//Radius
+			obj.radiusIncircle();
+			obj.SCalc();
+			obj.OuterRadis();
 
 		}else if(type.equalsIgnoreCase("ASA")){
 			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
@@ -104,6 +114,11 @@ public class Triangle {
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Radius
+			obj.radiusIncircle();
+			obj.SCalc();
+			obj.OuterRadis();
+			
 		}else if (type.equalsIgnoreCase("AAS")) {
 			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
 			System.out.print("Enter in angle1 according to this preset " + type + " : ");
@@ -133,6 +148,11 @@ public class Triangle {
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Radius
+			obj.radiusIncircle();
+			obj.SCalc();
+			obj.OuterRadis();
+			
 		}else if(type.equalsIgnoreCase("SSA")){
 			System.out.println("\n'SSA' is when we know two sides and an angle that is not the angle between the sides.\n");
 			System.out.print("Enter in side2 according to this preset " + type + " : ");
@@ -161,6 +181,11 @@ public class Triangle {
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
+			
+			//Radius
+			obj.radiusIncircle();
+			obj.SCalc();
+			obj.OuterRadis();
 			
 		}else{
 			System.out.println("Please Enter one of the presets above, Note it is case sensitive");
