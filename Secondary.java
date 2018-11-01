@@ -5,6 +5,7 @@ import java.text.DecimalFormat;
 public class Secondary {
 	
 	static DecimalFormat f = new DecimalFormat("##.00");
+	private static String Category;
 	private static double area;
 	private static double semiPerm;
 	private static int totalDegrees = 180;
@@ -24,6 +25,7 @@ public class Secondary {
 	private static double radiusIncircle;
 	private static double S;
 	private static double outerRadius;
+	private static double OuterCircleArea;
 	
 	public Secondary (String type,
 					  double info1,
@@ -55,17 +57,17 @@ public class Secondary {
 	
 	public static void heightAngle3(){
 		_height3 = (area * 2) / _side3;
-		System.out.println("\n" + f.format(_height3) + " This is the height of Angle 3.");
+		System.out.println("\nThe Height of Side 3 is " + f.format(_height3) + " units");
 	}
 	
 	public static void heightAngle2(){
 		_height2 = (area * 2) / _side2;
-		System.out.println(f.format(_height2) + " This is the height of Angle 2.");
+		System.out.println("The Height of Side 2 is " + f.format(_height2) + " units");
 	}
 	
 	public static void heightAngle1(){
 		_height1 = (area * 2) / _side1;
-		System.out.println(f.format(_height1) + " This is the height of Angle 1.");
+		System.out.println("The Height of Side 1 is" + f.format(_height1) + " units");
 	}
 	
 	public static void LASfindC(){
@@ -165,13 +167,31 @@ public class Secondary {
     }
     
     public static void OuterRadis() {
-    	outerRadius = (_side1 + _side2 + _side3) / (4 * (Math.sqrt(S * (S -_side1) * (S - _side2) * (S - _side3))));
+    	outerRadius = (_side1 * _side2 * _side3) / (4 * (Math.sqrt(S * (S -_side1) * (S - _side2) * (S - _side3))));
+    	System.out.println("The Outer Circle Radius is " + f.format(outerRadius) +  " units");
     }
     
+    public static void OuterCircleArea(){
+    	OuterCircleArea = 3.14 * Math.pow(outerRadius, 2);
+    	System.out.println("The Outer Circle Area is " + f.format(OuterCircleArea) +  " units^2");
+    }
     
     public static void SCalc() {
     	S = (_side1 + _side2 + _side3) / 2;
     }
+    
+    public static void printsBasicInfo(){
+    	System.out.println("\n----[Basic Info]---------------------------|");
+    }
+    
+    public static void printsRadiusLine(){
+    	System.out.println("\n----[Circle Calculations]------------------|");
+    }
+    
+    public static void printsHeightLine(){
+    	System.out.println("\n----[Height Info]--------------------------|");
+    }
+    
     
     protected void isTriangleValid() {
 		if (_side1 >= _side2 + _side3 || _side2 >= _side1 + _side3 || _side3 >= _side1 + _side2){
