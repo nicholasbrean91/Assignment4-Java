@@ -21,6 +21,9 @@ public class Secondary {
 	private static double _height3;
 	private static double _height2;
 	private static double _height1;
+	private static double radiusIncircle;
+	private static double S;
+	private static double outerRadius;
 	
 	public Secondary (String type,
 					  double info1,
@@ -154,6 +157,20 @@ public class Secondary {
     public static void heronFormula(){
     area = Math.sqrt(semiPerm*(semiPerm - _side1)*(semiPerm - _side2)*(semiPerm - _side3));
     System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
+    }
+    
+    public static void radiusIncircle() {
+    radiusIncircle = area / semiPerm;
+    System.out.println("\nThe radius in circle is " + f.format(radiusIncircle));
+    }
+    
+    public static void OuterRadis() {
+    	outerRadius = (_side1 + _side2 + _side3) / (4 * (Math.sqrt(S * (S -_side1) * (S - _side2) * (S - _side3))));
+    }
+    
+    
+    public static void SCalc() {
+    	S = (_side1 + _side2 + _side3) / 2;
     }
     
     protected void isTriangleValid() {
