@@ -32,6 +32,9 @@ public class Triangle {
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
 			
+			//Fancy Prints
+			obj.printsBasicInfo();
+			
 			//Calculations
 			obj.isTriangleValid();
 			obj.GetName();
@@ -43,15 +46,22 @@ public class Triangle {
 			obj.semiPerimeter();
 			obj.heronFormula();
 			
+			//Fancy Prints
+			obj.printsHeightLine();
+			
 			//Height
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Fancy Prints
+			obj.printsRadiusLine();
+			
 			//Radius
 			obj.radiusIncircle();
 			obj.SCalc();
 			obj.OuterRadis();
+			obj.OuterCircleArea();
 				
 		}else if(type.equalsIgnoreCase("SAS")){
 			System.out.println("\n'SAS' is when we know two sides and the angle between them.\n");
@@ -62,6 +72,9 @@ public class Triangle {
 			System.out.print("Enter in side 3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Fancy Prints
+			obj.printsBasicInfo();
 			
 			//Calculations
 			obj.getSide2cos();
@@ -75,15 +88,22 @@ public class Triangle {
 			obj.semiPerimeter();
 			obj.heronFormula();
 			
+			//Fancy Prints
+			obj.printsHeightLine();
+			
 			//Height
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Fancy Prints
+			obj.printsRadiusLine();
+			
 			//Radius
 			obj.radiusIncircle();
 			obj.SCalc();
 			obj.OuterRadis();
+			obj.OuterCircleArea();
 
 		}else if(type.equalsIgnoreCase("ASA")){
 			System.out.println("\nASA Triangle is when we know two angles and a side between the angles.\n ");
@@ -94,6 +114,9 @@ public class Triangle {
 			System.out.print("Enter in angle3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Fancy Prints
+			obj.printsBasicInfo();
 			
 			//Calculations
 			obj.missingAngle3(); //Find Missing Angle
@@ -109,15 +132,22 @@ public class Triangle {
 			obj.semiPerimeter();
 			obj.heronFormula();
 			
+			//Fancy Prints
+			obj.printsHeightLine();
+			
 			//Height
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Fancy Prints
+			obj.printsRadiusLine();
+			
 			//Radius
 			obj.radiusIncircle();
 			obj.SCalc();
 			obj.OuterRadis();
+			obj.OuterCircleArea();
 			
 		}else if (type.equalsIgnoreCase("AAS")) {
 			System.out.println("\n"  + 	"\"AAS\" is when we know two angles and one side (which is not between the angles).\n ");
@@ -128,6 +158,9 @@ public class Triangle {
 			System.out.print("Enter in side3 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Fancy Prints
+			obj.printsBasicInfo();
 			
 			//Calculations
 			obj.missingAngle2();
@@ -143,15 +176,22 @@ public class Triangle {
 			obj.semiPerimeter();
 			obj.heronFormula();
 			
+			//Fancy Prints
+			obj.printsHeightLine();
+			
 			//Height
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Fancy Prints
+			obj.printsRadiusLine();
+			
 			//Radius
 			obj.radiusIncircle();
 			obj.SCalc();
 			obj.OuterRadis();
+			obj.OuterCircleArea();
 			
 		}else if(type.equalsIgnoreCase("SSA")){
 			System.out.println("\n'SSA' is when we know two sides and an angle that is not the angle between the sides.\n");
@@ -162,6 +202,9 @@ public class Triangle {
 			System.out.print("Enter in angle2 according to this preset " + type + " : ");
 			info3 = userInput.nextInt();
 			Secondary obj = new Secondary(type, info1, info2, info3);
+			
+			//Fancy Prints
+			obj.printsBasicInfo();
 			
 			//Calculations
 			obj.LASfindC();
@@ -177,15 +220,22 @@ public class Triangle {
 			obj.semiPerimeter();
 			obj.heronFormula();
 			
+			//Fancy Prints
+			obj.printsHeightLine();
+			
 			//Height
 			obj.heightAngle3();
 			obj.heightAngle2();
 			obj.heightAngle1();
 			
+			//Fancy Prints
+			obj.printsRadiusLine();
+			
 			//Radius
 			obj.radiusIncircle();
 			obj.SCalc();
 			obj.OuterRadis();
+			obj.OuterCircleArea();
 			
 		}else{
 			System.out.println("Please Enter one of the presets above, Note it is case sensitive");
