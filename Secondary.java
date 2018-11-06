@@ -53,19 +53,20 @@ public class Secondary {
 		
 	}
 	
-	public static void heightAngle3(){
+	public static double heightAngle3(){
 		_height3 = (area * 2) / _side3;
-		System.out.println("\n" + f.format(_height3) + " This is the height of Angle 3.");
+		return _height3;
+		//
 	}
 	
-	public static void heightAngle2(){
+	public static double heightAngle2(){
 		_height2 = (area * 2) / _side2;
-		System.out.println(f.format(_height2) + " This is the height of Angle 2.");
+		return _height2;
 	}
 	
-	public static void heightAngle1(){
+	public static double heightAngle1(){
 		_height1 = (area * 2) / _side1;
-		System.out.println(f.format(_height1) + " This is the height of Angle 1.");
+		return _height1;
 	}
 	
 	public static void LASfindC(){
@@ -110,33 +111,36 @@ public class Secondary {
 		//System.out.println("the missing angle is " +  _angle2);
 	}
 	
-	public static void perimeterCalc(){
+	public static double perimeterCalc(){
 		double perimeter = _side1 + _side2 + _side3;
-		System.out.println("The Perimeter of the triangle is " + f.format(perimeter) + " units^2");
+		return perimeter;
 	}
 	
-	public static void GetName(){
+	public static int GetName(){
 		
 		if(_side1 == _side2 && _side2 != _side3 || _side2 == _side3 && _side3 != _side1 || _side3 == _side1 && _side1 != _side2){
 			
 			if(_angle1 < 90 && _angle2 < 90 && _angle3 < 90){
-				System.out.println("This triangle is an Acute Isosceles triangle");
+				return 1;
+				
 			}else{
-				System.out.println("This triangle is an Obtuse Isosceles triangle");
+				return 2;
+				
 				}
 		}else if(_side1 == _side2 && _side2 == _side3){
-				System.out.println("This triangle is an Equilateral triangle");
+				return 3;
 		
 		}else if (_side1 != _side2 && _side2 != _side3 && _side1 != _side3){
 			
 			if(_angle1 < 90 && _angle2 < 90 && _angle3 <90){
-				System.out.println("This triangle is an Acute Squalene triangle");
+				return 4;
 				
 			}else{
-				System.out.println("This triangle is an Obtuse Squalene triangle");
+				return 5;
+				
 				}
 		}else{
-			System.out.println("You should not be here.");
+			return 6;
 		}
 	}
     
@@ -150,35 +154,38 @@ public class Secondary {
         //System.out.println("Side length 3 is " + _side3);
     }
     
-    public static void semiPerimeter(){
+    public static double semiPerimeter(){
     semiPerm = (_side1 + _side2 + _side3)/2;
+    return semiPerm;
     }
     
-    public static void heronFormula(){
+    public static double heronFormula(double semiPerm){
     area = Math.sqrt(semiPerm*(semiPerm - _side1)*(semiPerm - _side2)*(semiPerm - _side3));
-    System.out.println("The Area of the triangle is " + f.format(area) + " units^2");
+    return area;
     }
     
-    public static void radiusIncircle() {
+    public static double radiusIncircle() {
     radiusIncircle = area / semiPerm;
-    System.out.println("\nThe radius in circle is " + f.format(radiusIncircle));
+    return radiusIncircle;
+    
     }
     
-    public static void OuterRadis() {
+    public static double OuterRadis(double S) {
     	outerRadius = (_side1 + _side2 + _side3) / (4 * (Math.sqrt(S * (S -_side1) * (S - _side2) * (S - _side3))));
+    	return outerRadius;
     }
     
     
-    public static void SCalc() {
+    public static double SCalc() {
     	S = (_side1 + _side2 + _side3) / 2;
+    	return S;
     }
     
-    protected void isTriangleValid() {
+    protected int isTriangleValid() {
 		if (_side1 >= _side2 + _side3 || _side2 >= _side1 + _side3 || _side3 >= _side1 + _side2){
-			System.out.println("\nIn our universe we cannot have that triangle, please try again.");
-			System.exit(0);
+			return 1;
 		}else{
-			System.out.println("\nThis is a real Triangle");
+			return 2;
 		}
     }
 }
